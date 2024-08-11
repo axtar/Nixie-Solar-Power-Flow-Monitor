@@ -54,7 +54,14 @@ public:
   // returns the load power value
   double getLoadPower()
   {
-    return (_P_Load - LOAD_CORRECTION);
+    if (GET_LOADPOWER_METHOD == LOADPOWER_FROMINVERTER)
+    {
+      return (_P_Load);
+    }
+    else
+    {
+      return ((_P_Akku + _P_PV + _P_Grid) * (-1));
+    }
   }
 
   // returns the solar power value
