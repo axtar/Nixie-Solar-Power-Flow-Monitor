@@ -1,5 +1,9 @@
 Firmware relase notes
 =====================
+Version:  0.1.2
+Status:   beta
+Date:     August 12, 2024
++ Added the option to calculate the load power
 
 Version: 	0.1.1
 Status:	 	beta
