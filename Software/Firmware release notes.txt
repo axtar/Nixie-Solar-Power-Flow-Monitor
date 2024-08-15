@@ -1,9 +1,16 @@
 Firmware relase notes
 =====================
+Version:  0.1.3
+Status:   beta
+Date:     August 15, 2024
++ changes
+  - changed ISR definition from lambda to functional 
+
 Version:  0.1.2
 Status:   beta
 Date:     August 12, 2024
-+ Added the option to calculate the load power
++ enhancements  
+  - added the option to calculate the load power
 
 Version: 	0.1.1
 Status:	 	beta
