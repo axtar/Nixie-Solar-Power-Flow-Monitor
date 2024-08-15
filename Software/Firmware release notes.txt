@@ -12,6 +12,6 @@ Date:     August 12, 2024
 + enhancements  
   - added the option to calculate the load power
 
-Version: 	0.1.1
-Status:	 	beta
-Date: 		first published version
+Version:  0.1.1
+Status:   beta
+Date:     first published version
