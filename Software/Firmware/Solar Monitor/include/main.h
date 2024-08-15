@@ -10,7 +10,5 @@
 //- INCLUDES
 #include <Arduino.h>
 #include <Controller.hpp>
-#include <PIR.hpp>
 
-PIR pir(PIN_PIR, PIR_DELAY);
-Controller controller(&pir);
+Controller controller;
