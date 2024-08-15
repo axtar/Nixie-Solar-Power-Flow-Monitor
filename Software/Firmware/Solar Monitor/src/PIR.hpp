@@ -1,4 +1,4 @@
-// PIR.h
+// PIR.hpp
 
 // provides PIR functionality
 
@@ -8,6 +8,7 @@
 #pragma once
 
 #include <Arduino.h>
+#include <FunctionalInterrupt.h>
 #include <DebugDefs.h>
 
 class PIR
@@ -23,9 +24,12 @@ public:
   {
   }
 
-  void IRAM_ATTR handlePIRTimeout()
+  void begin()
   {
-    _pirTimestamp = millis();
+    if (_pirDelay > 0)
+    {
+      attachInterrupt(_pinPIR, std::bind(&PIR::handlePIRTimeout, this), HIGH);
+    }
   }
 
   // provides PIR status
@@ -46,4 +50,9 @@ private:
   uint8_t _pinPIR;
   volatile unsigned long _pirTimestamp;
   unsigned long _pirDelay;
+
+  void IRAM_ATTR handlePIRTimeout()
+  {
+    _pirTimestamp = millis();
+  }
 };

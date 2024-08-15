@@ -23,12 +23,6 @@ void setup()
   else
   {
     D_println("Controller successfully initialized");
-    // set PIR interrupt
-    if (PIR_DELAY > 0)
-    {
-      attachInterrupt(PIN_PIR, []()
-                      { pir.handlePIRTimeout(); }, HIGH);
-    }
   }
 }
 

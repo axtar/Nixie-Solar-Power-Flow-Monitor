@@ -52,8 +52,6 @@
 // display number with the overall status
 #define OVERALL_DISPLAY_NUMBER 4
 
-
-
 enum class backlight_mode
 {
   off,
@@ -64,7 +62,7 @@ enum class backlight_mode
 class Controller
 {
 public:
-  Controller(PIR *pir) : _pir(pir), _button(PIN_BUTTON1)
+  Controller() : _button(PIN_BUTTON1)
   {
     _highVoltageOn = true;
     _lastRequestTimestamp = 0;
@@ -146,10 +144,13 @@ public:
     }
     _leds = new Adafruit_NeoPixel(_ledCount, PIN_LEDCTL, NEO_GRB + NEO_KHZ800);
     _leds->begin();
+
+    _pir = new PIR(PIN_PIR, PIR_DELAY);
   }
 
   virtual ~Controller()
   {
+    delete (_pir);
     for (int i = 0; i < DISPLAY_COUNT; i++)
     {
       delete (_displays[i]);
@@ -192,6 +193,7 @@ public:
 
     //
     clearDisplays();
+    _pir->begin();
 
     // high voltage on
     hvON();
@@ -602,7 +604,7 @@ private:
   PIR *_pir;
 
   // initializes the network hardware
-  int initNetwork()
+  uint8_t initNetwork()
   {
     int result = ERR_SUCCESS;
 
