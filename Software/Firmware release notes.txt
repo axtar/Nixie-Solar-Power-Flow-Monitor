@@ -1,5 +1,13 @@
 Firmware relase notes
 =====================
+Version:  0.1.4
+Status:   beta
+Date:     August 18, 2024
++ changes
+  - inverter port now defined in Settings.h
+  - added some comments
+  - typos corrected
+
 Version:  0.1.3
 Status:   beta
 Date:     August 15, 2024
