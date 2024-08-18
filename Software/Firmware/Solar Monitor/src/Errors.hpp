@@ -18,8 +18,7 @@
 class Errors
 {
 public:
-  Errors() 
-  {
+  Errors() {
   };
 
   // returns error description
@@ -42,7 +41,7 @@ public:
       break;
 
     case ERR_ETHERNET_LINKOFF:
-      text = "Ethernet link down0";
+      text = "Ethernet link down";
       break;
     }
     return (text);

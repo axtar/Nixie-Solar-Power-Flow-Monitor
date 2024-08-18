@@ -13,8 +13,6 @@
 #include <DebugDefs.h>
 #include <Settings.h>
 
-
-
 class Inverter
 {
 public:
@@ -92,7 +90,7 @@ public:
     if (!client->connected())
     {
       D_println("Client is disconnected");
-      if (!client->connect(INVERTER_IPADDRESS, 80))
+      if (!client->connect(INVERTER_IPADDRESS, INVERTER_PORT))
       {
         D_println("Failed to connect to the inverter");
       }

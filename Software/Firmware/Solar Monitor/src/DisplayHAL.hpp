@@ -14,7 +14,8 @@
 #define LEDCOUNT 6          // number of LEDS per board
 #define DECIMALPOINTCOUNT 2 // number of decimal points per board
 
-//#define OLD_BOARDS // comment out for new display and driver board versions
+// comment out for new display and driver board versions
+// #define OLD_BOARDS
 
 // type connected to a shift register output
 enum class register_type : uint8_t
@@ -79,7 +80,7 @@ public:
     return (DIGITCOUNT);
   }
 
-  // return the number of decimal point neons
+  // returns the number of decimal point neons
   uint8_t getDecimalPointCount()
   {
     return (DECIMALPOINTCOUNT);

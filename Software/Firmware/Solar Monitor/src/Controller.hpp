@@ -184,21 +184,15 @@ public:
     // set blank line to high
     digitalWrite(PIN_BLANK, HIGH);
 
-    // initialize PIR
-    // _pir.begin(PIN_PIR);
-    // if (PIR_DELAY > 0)
-    // {
-    //   attachInterrupt(PIN_PIR, []() {_pir.handlePIRTimeout();}, HIGH);
-    // }
-
-    //
     clearDisplays();
+
+    // initialize PIR
     _pir->begin();
 
     // high voltage on
     hvON();
 
-    // init ethernet
+    // initialize ethernet
     int err = initNetwork();
     if (err != ERR_SUCCESS)
     {
@@ -229,6 +223,7 @@ public:
       // check if it is time to request new values
       if (millis() - _lastRequestTimestamp > INVERTER_POLLINGINTERVAL * 1000)
       {
+        // renew DHCP lease if needed
         Ethernet.maintain();
         if (isHVON()) // request values only if HV is on
         {

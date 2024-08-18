@@ -28,6 +28,7 @@ public:
   {
     if (_pirDelay > 0)
     {
+      // set ISR
       attachInterrupt(_pinPIR, std::bind(&PIR::handlePIRTimeout, this), HIGH);
     }
   }
