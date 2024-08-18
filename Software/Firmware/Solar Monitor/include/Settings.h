@@ -20,6 +20,9 @@
 // IP address of the inverter
 #define INVERTER_IPADDRESS "xxx.xxx.xxx.xxx"
 
+// Inverter connection port
+#define INVERTER_PORT 80
+
 // values in the defined range are set to 0 to keep the display quieter
 // set this value to 0 if you dont want to round towards zero
 #define POWER_ROUND_TO_ZERO_RANGE 10 // in watts

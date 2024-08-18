@@ -10,5 +10,5 @@
 //- VERSION
 #define MAJOR_VERSION 0
 #define MINOR_VERSION 1
-#define REVISION 3
+#define REVISION 4
 #define FW_STATUS "beta"
