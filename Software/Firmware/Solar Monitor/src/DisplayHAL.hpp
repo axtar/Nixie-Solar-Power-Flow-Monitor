@@ -69,31 +69,31 @@ public:
   }
 
   // returns the number of registers
-  uint8_t getRegisterCount()
+  uint8_t getRegisterCount() const
   {
     return (REGISTERCOUNT);
   }
 
   // returns the number of digits
-  uint8_t getDigitCount()
+  uint8_t getDigitCount() const
   {
     return (DIGITCOUNT);
   }
 
   // returns the number of decimal point neons
-  uint8_t getDecimalPointCount()
+  uint8_t getDecimalPointCount() const
   {
     return (DECIMALPOINTCOUNT);
   }
 
   // returns the number of LEDs
-  uint8_t getLedCount()
+  uint8_t getLedCount() const
   {
     return (LEDCOUNT);
   }
 
   // returns information about what is connected to a specific shift register output
-  register_type getRegisterInfo(uint8_t registerNumber, uint8_t *digit, uint8_t *number)
+  register_type getRegisterInfo(uint8_t registerNumber, uint8_t *digit, uint8_t *number) const
   {
     *digit = 0;
     *number = 0;

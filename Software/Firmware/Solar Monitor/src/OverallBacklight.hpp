@@ -53,7 +53,7 @@ public:
   }
 
   // returns LED color for rating
-  int getRatingColor(overall_rating overallRating)
+  int getRatingColor(overall_rating overallRating) const
   {
     int color = 0;
     if (((int)overallRating >= 0) && ((int)overallRating <= RATING_COUNT))
@@ -76,13 +76,13 @@ public:
   }
 
   // get the first LED number in the LED array section of the overall status display
-  int getMinLED()
+  int getMinLED() const
   {
     return (_minLED);
   }
 
   // get the first LED number in the LED array section of the overall status display
-  int getMaxLED()
+  int getMaxLED() const
   {
     return (_maxLED);
   }

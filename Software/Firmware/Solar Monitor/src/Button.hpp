@@ -32,7 +32,7 @@ public:
   }
 
   // returns if button has been pressed
-  bool isPressed()
+  bool isPressed() const
   {
     return (_isPressed);
   }

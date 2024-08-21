@@ -78,10 +78,10 @@ public:
     _displays[0] = new Display(display_type::solar_power, value_type ::watts,
                                PIN_DATA, PIN_STORE, PIN_SHIFT,
                                PIN_BLANK, PIN_LEDCTL);
-    _displays[0]->getBacklight()->setRating(rating_step::poor, 0, 250, Helper::rgbToInt(255, 0, 0));
-    _displays[0]->getBacklight()->setRating(rating_step::fair, 251, 1500, Helper::rgbToInt(255, 100, 0));
-    _displays[0]->getBacklight()->setRating(rating_step::good, 1501, 5000, Helper::rgbToInt(0, 255, 0));
-    _displays[0]->getBacklight()->setRating(rating_step::excellent, 5001, 999999, Helper::rgbToInt(0, 153, 153));
+    _displays[0]->getBacklight()->setRating(rating_step::poor, 0, 250, Helper::rgbToInt(COLOR_POOR));
+    _displays[0]->getBacklight()->setRating(rating_step::fair, 251, 1500, Helper::rgbToInt(COLOR_FAIR));
+    _displays[0]->getBacklight()->setRating(rating_step::good, 1501, 5000, Helper::rgbToInt(COLOR_GOOD));
+    _displays[0]->getBacklight()->setRating(rating_step::excellent, 5001, 999999, Helper::rgbToInt(COLOR_EXCELLENT));
     _displays[0]->getBacklight()->setMinLED(24);
     _displays[0]->getBacklight()->setMaxLED(29);
 
@@ -89,10 +89,10 @@ public:
     _displays[1] = new Display(display_type::battery_power, value_type ::watts,
                                PIN_DATA, PIN_STORE, PIN_SHIFT,
                                PIN_BLANK, PIN_LEDCTL);
-    _displays[1]->getBacklight()->setRating(rating_step::poor, 1501, 999999, Helper::rgbToInt(255, 0, 0));
-    _displays[1]->getBacklight()->setRating(rating_step::fair, 0, 1500, Helper::rgbToInt(255, 100, 0));
-    _displays[1]->getBacklight()->setRating(rating_step::good, -3001, 1, Helper::rgbToInt(0, 255, 0));
-    _displays[1]->getBacklight()->setRating(rating_step::excellent, -999999, -3000, Helper::rgbToInt(0, 153, 153));
+    _displays[1]->getBacklight()->setRating(rating_step::poor, 1501, 999999, Helper::rgbToInt(COLOR_POOR));
+    _displays[1]->getBacklight()->setRating(rating_step::fair, 0, 1500, Helper::rgbToInt(COLOR_FAIR));
+    _displays[1]->getBacklight()->setRating(rating_step::good, -3001, 1, Helper::rgbToInt(COLOR_GOOD));
+    _displays[1]->getBacklight()->setRating(rating_step::excellent, -999999, -3000, Helper::rgbToInt(COLOR_EXCELLENT));
     _displays[1]->getBacklight()->setMinLED(18);
     _displays[1]->getBacklight()->setMaxLED(23);
 
@@ -100,10 +100,10 @@ public:
     _displays[2] = new Display(display_type::grid_power, value_type ::watts,
                                PIN_DATA, PIN_STORE, PIN_SHIFT,
                                PIN_BLANK, PIN_LEDCTL);
-    _displays[2]->getBacklight()->setRating(rating_step::poor, 1501, 999999, Helper::rgbToInt(255, 0, 0));
-    _displays[2]->getBacklight()->setRating(rating_step::fair, 0, 1500, Helper::rgbToInt(255, 100, 0));
-    _displays[2]->getBacklight()->setRating(rating_step::good, -3001, 1, Helper::rgbToInt(0, 255, 0));
-    _displays[2]->getBacklight()->setRating(rating_step::excellent, -999999, -3000, Helper::rgbToInt(0, 153, 153));
+    _displays[2]->getBacklight()->setRating(rating_step::poor, 1501, 999999, Helper::rgbToInt(COLOR_POOR));
+    _displays[2]->getBacklight()->setRating(rating_step::fair, 0, 1500, Helper::rgbToInt(COLOR_FAIR));
+    _displays[2]->getBacklight()->setRating(rating_step::good, -3001, 1, Helper::rgbToInt(COLOR_GOOD));
+    _displays[2]->getBacklight()->setRating(rating_step::excellent, -999999, -3000, Helper::rgbToInt(COLOR_EXCELLENT));
     _displays[2]->getBacklight()->setMinLED(12);
     _displays[2]->getBacklight()->setMaxLED(17);
 
@@ -111,10 +111,10 @@ public:
     _displays[3] = new Display(display_type::load_power, value_type ::watts,
                                PIN_DATA, PIN_STORE, PIN_SHIFT,
                                PIN_BLANK, PIN_LEDCTL);
-    _displays[3]->getBacklight()->setRating(rating_step::poor, -999999, -1501, Helper::rgbToInt(255, 0, 0));
-    _displays[3]->getBacklight()->setRating(rating_step::fair, -1500, -501, Helper::rgbToInt(255, 100, 0));
-    _displays[3]->getBacklight()->setRating(rating_step::good, -500, -251, Helper::rgbToInt(0, 255, 0));
-    _displays[3]->getBacklight()->setRating(rating_step::excellent, -250, 0, Helper::rgbToInt(0, 153, 153));
+    _displays[3]->getBacklight()->setRating(rating_step::poor, -999999, -1501, Helper::rgbToInt(COLOR_POOR));
+    _displays[3]->getBacklight()->setRating(rating_step::fair, -1500, -501, Helper::rgbToInt(COLOR_FAIR));
+    _displays[3]->getBacklight()->setRating(rating_step::good, -500, -251, Helper::rgbToInt(COLOR_GOOD));
+    _displays[3]->getBacklight()->setRating(rating_step::excellent, -250, 0, Helper::rgbToInt(COLOR_EXCELLENT));
     _displays[3]->getBacklight()->setMinLED(6);
     _displays[3]->getBacklight()->setMaxLED(11);
 
@@ -122,18 +122,18 @@ public:
     _displays[4] = new Display(display_type::battery_charge, value_type ::battery_charge,
                                PIN_DATA, PIN_STORE, PIN_SHIFT,
                                PIN_BLANK, PIN_LEDCTL);
-    _displays[4]->getBacklight()->setRating(rating_step::poor, 0, 10, Helper::rgbToInt(255, 0, 0));
-    _displays[4]->getBacklight()->setRating(rating_step::fair, 11, 50, Helper::rgbToInt(255, 100, 0));
-    _displays[4]->getBacklight()->setRating(rating_step::good, 51, 90, Helper::rgbToInt(0, 255, 0));
-    _displays[4]->getBacklight()->setRating(rating_step::excellent, 91, 100, Helper::rgbToInt(0, 153, 153));
+    _displays[4]->getBacklight()->setRating(rating_step::poor, 0, 10, Helper::rgbToInt(COLOR_POOR));
+    _displays[4]->getBacklight()->setRating(rating_step::fair, 11, 50, Helper::rgbToInt(COLOR_FAIR));
+    _displays[4]->getBacklight()->setRating(rating_step::good, 51, 90, Helper::rgbToInt(COLOR_GOOD));
+    _displays[4]->getBacklight()->setRating(rating_step::excellent, 91, 100, Helper::rgbToInt(COLOR_EXCELLENT));
     _displays[4]->getBacklight()->setMinLED(0);
     _displays[4]->getBacklight()->setMaxLED(3);
 
     // this display has also the overall status indicator with separate settings for the rating
-    _displays[4]->getOverallBacklight()->setRatingColor(overall_rating::poor, Helper::rgbToInt(255, 0, 0));
-    _displays[4]->getOverallBacklight()->setRatingColor(overall_rating::fair, Helper::rgbToInt(255, 100, 0));
-    _displays[4]->getOverallBacklight()->setRatingColor(overall_rating::good, Helper::rgbToInt(0, 255, 0));
-    _displays[4]->getOverallBacklight()->setRatingColor(overall_rating::excellent, Helper::rgbToInt(0, 153, 153));
+    _displays[4]->getOverallBacklight()->setRatingColor(overall_rating::poor, Helper::rgbToInt(COLOR_POOR));
+    _displays[4]->getOverallBacklight()->setRatingColor(overall_rating::fair, Helper::rgbToInt(COLOR_FAIR));
+    _displays[4]->getOverallBacklight()->setRatingColor(overall_rating::good, Helper::rgbToInt(COLOR_GOOD));
+    _displays[4]->getOverallBacklight()->setRatingColor(overall_rating::excellent, Helper::rgbToInt(COLOR_EXCELLENT));
     _displays[4]->getOverallBacklight()->setMinLED(5);
     _displays[4]->getOverallBacklight()->setMaxLED(5);
 
@@ -162,8 +162,6 @@ public:
   int begin()
   {
     int result = ERR_SUCCESS;
-    // init console
-    D_Begin(115200);
 
     // clear leds
     clearLEDs();
@@ -197,15 +195,12 @@ public:
     if (err != ERR_SUCCESS)
     {
       result = err;
+      // error, shutdown high voltage
+      hvOFF();
     }
     else
     {
       initClient();
-    }
-    if (result != ERR_SUCCESS)
-    {
-      // error, shutdown high voltage
-      hvOFF();
     }
     return (result);
   }
@@ -382,7 +377,7 @@ public:
   }
 
   // set symbols for rotation
-  void setSymbols(register_type symbol0, register_type symbol4, register_type symbol5)
+  void setSymbols(register_type symbol0, register_type symbol4, register_type symbol5) const
   {
     for (int i = 0; i < DISPLAY_COUNT; i++)
     {
@@ -391,7 +386,7 @@ public:
   }
 
   // get current inverter value by display type
-  double getValueByDisplayType(display_type displayType)
+  double getValueByDisplayType(display_type displayType) const
   {
     double value = 0.0;
     switch (displayType)
@@ -442,7 +437,7 @@ public:
   }
 
   // set LED colors for all displays
-  void setLEDs()
+  void setLEDs() 
   {
     for (int i = 0; i < DISPLAY_COUNT; i++)
     {
@@ -474,7 +469,7 @@ public:
   }
 
   // set the color of all LEDs of a specific display according to a value
-  void setBacklight(int displayNumber, double value)
+  void setBacklight(int displayNumber, double value) const
   {
     int color = _displays[displayNumber]->getBacklight()->getColor(value);
     for (int i = _displays[displayNumber]->getBacklight()->getMinLED(); i <= _displays[displayNumber]->getBacklight()->getMaxLED(); i++)
@@ -484,7 +479,7 @@ public:
   }
 
   // set the overall status LED color
-  void setOverallBacklight(int displayNumber)
+  void setOverallBacklight(int displayNumber) const
   {
     // check if correct display
     if (displayNumber == OVERALL_DISPLAY_NUMBER)
@@ -519,13 +514,13 @@ public:
   }
 
   // returns if the high voltage is turned on
-  bool isHVON()
+  bool isHVON() const
   {
     return (_highVoltageOn);
   }
 
   // sets the value to display on the given display board
-  void setDisplayValue(int displayNumber, double value, value_type valueType)
+  void setDisplayValue(int displayNumber, double value, value_type valueType) const
   {
     DISPLAY_VALUE displayValue = {0};
 
@@ -551,13 +546,13 @@ public:
   }
 
   // clear the value to display on the given display board
-  void clearDisplayValue(int displayNumber)
+  void clearDisplayValue(int displayNumber) const
   {
     _displays[displayNumber]->clear();
   }
 
   // clear all display boards
-  void clearDisplays()
+  void clearDisplays() const
   {
 
     digitalWrite(PIN_STORE, STORE_BEGIN);
@@ -570,7 +565,7 @@ public:
   }
 
   // updates all display boards
-  void updateDisplays()
+  void updateDisplays() const
   {
     digitalWrite(PIN_STORE, STORE_BEGIN);
     for (int i = 0; i < DISPLAY_COUNT; i++)

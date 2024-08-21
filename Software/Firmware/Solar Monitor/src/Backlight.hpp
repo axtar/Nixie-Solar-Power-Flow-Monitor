@@ -60,7 +60,7 @@ public:
   }
 
   // get LED color for a specific value
-  int getColor(double value)
+  int getColor(double value) const
   {
     int color = 0;
     double rounded = round(value);
@@ -88,13 +88,13 @@ public:
   }
 
   // get the first LED number in the LED array section of the display
-  int getMinLED()
+  int getMinLED() const
   {
     return (_minLED);
   }
 
   // get last LED number in the LED array section of the display
-  int getMaxLED()
+  int getMaxLED() const
   {
     return (_maxLED);
   }

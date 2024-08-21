@@ -112,13 +112,13 @@ public:
     delete (_decimalPoints);
   }
 
-  uint8_t getLedCount()
+  uint8_t getLedCount() const
   {
     return (_ledCount);
   }
 
   // set internal variables
-  void setValues(DISPLAY_VALUE &displayValue)
+  void setValues(const DISPLAY_VALUE &displayValue)
   {
 
     if (displayValue.errorFlag)
@@ -167,7 +167,7 @@ public:
   }
 
   // set registers for symbol rotation, keeps the numeric values untouched
-  void setSymbolRegisters()
+  void setSymbolRegisters() const
   {
     register_type regType;
     uint8_t digit = 0;
@@ -227,7 +227,7 @@ public:
   }
 
   // clears all registers
-  void clearRegisters()
+  void clearRegisters() const
   {
     for (uint8_t i = _registerCount; i > 0; i--)
     {
@@ -236,7 +236,7 @@ public:
   }
 
   // set registers for digits, decimal points and signs
-  void setRegisters()
+  void setRegisters() const
   {
     register_type regType;
     uint8_t digit = 0;
@@ -340,25 +340,25 @@ public:
   }
 
   // returns the display type
-  display_type getDisplayType()
+  display_type getDisplayType() const
   {
     return (_displayType);
   }
 
   // returns the value type
-  value_type getValueType()
+  value_type getValueType() const
   {
     return (_valueType);
   }
 
   // provides access to backlight
-  Backlight *getBacklight()
+  Backlight *getBacklight() const
   {
     return (_backlight);
   }
 
   // provides acces to overall status backlight
-  overallBacklight *getOverallBacklight()
+  overallBacklight *getOverallBacklight() const
   {
     return (_overallBacklight);
   }
@@ -401,7 +401,7 @@ private:
   register_type _symbolDigit5;
 
   // commit number to shift registers
-  void commitDigitNumber(uint8_t digit, uint8_t number)
+  void commitDigitNumber(uint8_t digit, uint8_t number) const
   {
     // digit is shifted by one
     if (_digits[digit - 1] == number)
@@ -415,7 +415,7 @@ private:
   }
 
   // commit decimal point to shift registers
-  void commitDecimalPoint(uint8_t decimalPoint)
+  void commitDecimalPoint(uint8_t decimalPoint) const
   {
     if (_decimalPoints[decimalPoint - 1] == decimal_point_state::off)
     {
@@ -428,7 +428,7 @@ private:
   }
 
   // commit sign to shift registers
-  void commitSign(register_type regType)
+  void commitSign(register_type regType) const
   {
     switch (regType)
     {
@@ -467,7 +467,7 @@ private:
   }
 
   // commit bit to shift registers
-  void commitBit(uint8_t value)
+  void commitBit(uint8_t value) const
   {
     digitalWrite(_shiftPin, SHIFT_BEGIN);
     digitalWrite(_dataPin, value);

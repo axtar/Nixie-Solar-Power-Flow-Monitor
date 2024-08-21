@@ -34,7 +34,7 @@ public:
   }
 
   // provides PIR status
-  bool process()
+  bool process() const
   {
     bool result = true;
     if (_pirDelay > 0)

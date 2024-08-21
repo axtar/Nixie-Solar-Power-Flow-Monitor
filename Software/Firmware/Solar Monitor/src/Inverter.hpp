@@ -26,31 +26,31 @@ public:
   }
 
   // returns the defined request interval
-  int getRequestInterval()
+  int getRequestInterval() const
   {
     return (INVERTER_POLLINGINTERVAL);
   }
 
   // returns the battery charge value
-  double getBatteryCharge()
+  double getBatteryCharge() const
   {
     return (_SOC);
   }
 
   // returns the battery power value
-  double getBatteryPower()
+  double getBatteryPower() const
   {
     return (_P_Akku);
   }
 
   // returns the grid power value
-  double getGridPower()
+  double getGridPower() const
   {
     return (_P_Grid);
   }
 
   // returns the load power value
-  double getLoadPower()
+  double getLoadPower() const
   {
     if (GET_LOADPOWER_METHOD == LOADPOWER_FROMINVERTER)
     {
@@ -63,13 +63,13 @@ public:
   }
 
   // returns the solar power value
-  double getSolarPower()
+  double getSolarPower() const
   {
     return (_P_PV);
   }
 
   // returns the overall status
-  bool getOverallStatus()
+  bool getOverallStatus() const
   {
     if (getGridPower() > 0)
     {
@@ -82,7 +82,7 @@ public:
   }
 
   // gets values from the inverter
-  bool requestValues(EthernetClient *client)
+  bool requestValues(EthernetClient *client) 
   {
     bool result = false;
     resetValues();
@@ -185,7 +185,7 @@ private:
   }
 
   // sets values to 0 within a defined range
-  double powerRoundToZero(double value)
+  double powerRoundToZero(double value) const
   {
     if (abs(value) < POWER_ROUND_TO_ZERO_RANGE)
     {

@@ -9,6 +9,10 @@
 
 void setup()
 {
+  // init console
+  D_Begin(115200);
+
+  D_print("Initializing controller...");
   int status = controller.begin();
   if (status != ERR_SUCCESS)
   {
