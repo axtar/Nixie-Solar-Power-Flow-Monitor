@@ -1,5 +1,12 @@
 Firmware relase notes
 =====================
+Version:  0.1.5
+Status:   beta
+Date:     August 21, 2024
++ changes
+  - declared some methods as const
+  - rating colors defined in Settings.h
+
 Version:  0.1.4
 Status:   beta
 Date:     August 18, 2024
