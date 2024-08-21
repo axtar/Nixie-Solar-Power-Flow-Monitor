@@ -18,7 +18,7 @@
 #define INVERTER_POLLINGINTERVAL 5 // in seconds
 
 // IP address of the inverter
-#define INVERTER_IPADDRESS "xxx.xxx.xxx.xxx"
+#define INVERTER_IPADDRESS "x.x.x.x"
 
 // Inverter connection port
 #define INVERTER_PORT 80
@@ -33,3 +33,9 @@
 
 // used method to get the load power value
 #define GET_LOADPOWER_METHOD LOADPOWER_CALCULATE
+
+// rating backlight colors R, G, B
+#define COLOR_EXCELLENT 0, 153, 153
+#define COLOR_GOOD 0, 255, 0
+#define COLOR_FAIR 255, 100, 0
+#define COLOR_POOR 255, 0, 0
