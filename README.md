@@ -6,7 +6,7 @@
 
 **Notes:**
 - **The firmware is designed to work with a specific Fronius hybrid inverter using the Solar API V1. Firmware changes are needed for other inverters and configurations.**
-- **This repository does not contain a complete project design. The design of the high voltage power supply (170V / ≥75mA) is not provided.** 
+- **This repository does not contain a complete project design. The design of the high voltage power supply (170V / ≥75mA) is not provided. I recommend using a professionally designed and extensively tested HV PSU.** 
 - **Be aware that I'm just an electronics hobbyist and nixie enthusiast. However, this repository is only intended for suitable qualified electronics engineers who are familiar with nixie tubes.**
 - **Please read all documents in [Docs](Docs) before deciding whether to build the device.**
 - **I'm not affiliated with any of the service providers mentioned in this project.**
